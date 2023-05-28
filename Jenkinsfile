@@ -9,7 +9,6 @@ pipeline {
 
                     }
                 }
-                echo 'Starting the pipeline'
             }
         }
     }
