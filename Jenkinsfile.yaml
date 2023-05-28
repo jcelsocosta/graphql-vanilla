@@ -4,13 +4,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        scripts {
-          def imageName = 'graphql-vanilla'
-          def imageTag = 'latest'
-          def dockerFilePath = './Dockerfile'
-
-          sh "docker build -t ${imageName}:${imageTag} -f ${dockerFilePath} ."
-        }
+          sh "docker build -t graphql-vanilla:v1.0.0 -f ./Dockerfile ."
       }
     }
   }
