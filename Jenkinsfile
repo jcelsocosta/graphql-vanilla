@@ -2,6 +2,17 @@ pipeline {
   agent any
 
   stages {
+    stage ('Verify tooling') {
+      steps {
+        sh '''
+          docker version
+          docker info
+          docker compose version
+          curl --version
+          jq --version
+        '''
+      }
+    }
     stage('Build image') {
       steps {
         script {
@@ -10,7 +21,7 @@ pipeline {
       }
     }
 
-    stage('Run docker') {
+    stage('Run docker-compose') {
       steps {
         script {
           sh "docker-compose up -d"
