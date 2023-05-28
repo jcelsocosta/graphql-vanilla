@@ -13,7 +13,7 @@ pipeline {
     stage('Run docker') {
       steps {
         script {
-          sh "docker run --name graphql-vanilla -d graphql-vanilla"
+          sh "docker-compose up -d"
         }
       }
     }
