@@ -8,10 +8,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      ports:
-        - 4000:4000
-      networks:
-        - common_networks
+    ports:
+      - 4000:4000
+    networks:
+      - common_networks
 
 volumes:
   pgdata:
