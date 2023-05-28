@@ -1,9 +1,15 @@
-pipeline:
-  agent:
-    docker:
-    image: graphql-vanilla
-    args: "-v /var/run/docker.sock:/var/run/docker.sock"
-  stages:
-    - stage: Build
-      steps:
+pipeline {
+  agent {
+    docker {
+      image: graphql-vanilla
+      args: '-v /var/run/docker.sock:/var/run/docker.sock'
+    }
+  }
+  stages{
+    stage('Build') {
+      steps{
         - sh 'docker build -t graphl-vanilla -f Dockerfile .'
+      }
+    }
+  }
+}
