@@ -1,10 +1,6 @@
 pipeline {
-  agent {
-    docker {
-      image 'graphql-vanilla'
-      args '-v /var/run/docker.sock:/var/run/docker.sock'
-    }
-  }
+  agent any
+
   stages {
     stage('Build') {
       steps {
@@ -12,6 +8,7 @@ pipeline {
           def imageName = 'graphql-vanilla'
           def imageTag = 'latest'
           def dockerFilePath = './Dockerfile'
+
           sh "docker build -t ${imageName}:${imageTag} -f ${dockerFilePath} ."
         }
       }
