@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t graphl-vanilla -f Dockerfile .'
+        sh 'docker build -t graphql-vanilla -f Dockerfile .'
       }
     }
   }
