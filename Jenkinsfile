@@ -8,7 +8,6 @@ pipeline {
           docker version
           docker info
           docker -v
-          docker-compose -v
           curl --version
         '''
       }
@@ -25,7 +24,7 @@ pipeline {
     stage('Run docker-compose') {
       steps {
         script {
-          sh "docker-compose up -d"
+          sh "/usr/local/bin/docker/docker-compose up -d"
         }
       }
     }
