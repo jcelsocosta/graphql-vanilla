@@ -12,6 +12,7 @@ pipeline {
         '''
       }
     }
+    /*
     stage('Build image') {
       steps {
         script {
@@ -19,7 +20,7 @@ pipeline {
         }
       }
     }
-
+    */
     stage('Run docker-compose') {
       steps {
         script {
