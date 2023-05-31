@@ -23,9 +23,7 @@ pipeline {
     */
     stage('Run docker-compose') {
       steps {
-        script {
-          sh "/usr/local/bin/docker/docker-compose up -d"
-        }
+        sh "/usr/local/bin/docker/docker-compose up -d"
       }
     }
   }
