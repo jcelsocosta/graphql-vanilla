@@ -3,7 +3,6 @@ import { createHandler } from 'graphql-http/lib/use/http';
 import { schema } from './schema';
 import cors from 'cors'
 import morgan from 'morgan'
-// Create the GraphQL over HTTP Node request handler
 
 // Create a HTTP server using the listner on `/graphql`
 const options: cors.CorsOptions = {
